@@ -1,0 +1,308 @@
+/*start of the nav bar*/
+
+#jazzy-logo {
+    color: rgba(255, 255, 255, .8);
+    display: grid;
+    align-items: center;
+    max-height: max-content;
+}
+
+#jazzy-logo>img {
+    height: 200px;
+    max-height: max-content;
+    justify-content: center;
+    display: grid;
+    width: 100%;
+    opacity: 1.0 !important;
+    margin: 0px;
+    padding: 0% 2%;
+    background-color: rgb(78, 78, 78);
+    border: 4px solid rgb(255, 255, 255);
+}
+
+.brand-text.font-weight-light {
+    color: white;
+    text-align: center;
+    font-weight: 700;
+    font-family: 'Recharge';
+}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active,
+.sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active {
+    background-color: rgb(255, 255, 255);
+    color: rgb(177, 0, 0) !important;
+    transition: 500ms;
+    -webkit-transition: 500ms;
+    -moz-transition: 500ms;
+    -ms-transition: 500ms;
+    -o-transition: 500ms;
+}
+
+.breadcrumb-item>a {
+    color: black;
+}
+
+.breadcrumb-item.active>a {
+    color: #a00;
+}
+
+.sidebar-dark-primary:hover .nav-sidebar>.nav-item>.nav-link.active:hover,
+.sidebar-light-primary:hover .nav-sidebar>.nav-item>.nav-link.active:hover {
+    background: linear-gradient(90deg, rgb(136, 100, 0) 0%, rgb(233, 140, 0) 51%, rgba(136, 100, 0, 1) 100%);
+    color: rgb(255, 255, 255);
+    transition: 500ms;
+    -webkit-transition: 500ms;
+    -moz-transition: 500ms;
+    -ms-transition: 500ms;
+    -o-transition: 500ms;
+}
+
+.main-sidebar {
+    background: linear-gradient(90deg, rgba(60, 0, 0, 1) 0%, rgba(217, 0, 0, 1) 51%, rgba(115, 0, 0, 1) 100%);
+}
+
+.breadcrumb-item+.breadcrumb-item>a {
+    color: #a00;
+}
+
+.breadcrumb {
+    background: rgba(0, 0, 0, 0);
+    margin: 0;
+}
+
+.breadcrumb-item>a {
+    color: #a00 !important;
+}
+
+.breadcrumb-item.active>a {
+    color: rgb(255, 255, 255) !important;
+    background-color: #a00;
+    border: 0px;
+}
+
+.btn.btn-primary {
+    border: 0px;
+    background-color: #a00;
+    color: #fff;
+}
+
+.btn-success {
+    border: 0px;
+    background-color: rgb(177, 0, 0);
+}
+
+.nav-header {
+    font-weight: 800;
+    color: white;
+}
+
+
+/**/
+
+.content-wrapper {
+    animation-name: bkg_scroll;
+    animation-duration: 60s;
+    animation-timing-function: initial;
+    animation-fill-mode: both;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    background-image: url(../img/car_12.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@keyframes bkg_scroll {
+    10% {
+        background-image: url(../img/car_12.jpg);
+    }
+    25% {
+        background-image: url(../img/car_decoration_1.jpg);
+    }
+    50% {
+        background-image: url(../img/driver_1.jpg);
+    }
+    75% {
+        background-image: url(../img/car_decoration_3.jpg);
+    }
+    90% {
+        background-image: url(../img/car_7.jpg);
+    }
+    100% {
+        background-image: url(../img/car_gas_stat_2.jpg);
+    }
+}
+
+.content-wrapper>.content {
+    padding: 0px;
+}
+
+.row {
+    padding: 0.5% 0% !important;
+}
+
+.card {
+    background: radial-gradient(circle, rgba(255, 0, 0, 1) 0%, rgba(121, 0, 0, 1) 100%);
+}
+
+td>a {
+    color: white;
+    font-weight: 800;
+}
+
+.card-header {
+    text-align: center;
+    color: #fff;
+    font-weight: 800;
+}
+
+.jazzy-navbar {
+    background-color: #a00;
+    color: #fff;
+}
+
+.main-header.navbar.navbar-expand.navbar-white.navbar-light {
+    background-color: #a00;
+    color: #fff;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.accent-primary .btn-link,
+.accent-primary .nav-tabs .nav-link,
+.accent-primary a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.btn) {
+    color: #fff;
+    font-weight: 600;
+}
+
+.align-items-center {
+    -webkit-align-items: center!important;
+    -ms-flex-align: center!important;
+    align-items: center!important;
+    background-color: rgb(255, 251, 0);
+    display: grid;
+    height: 80px;
+    margin: 1%;
+    border: 2px solid black;
+}
+
+#recent-actions-module {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    padding: 6%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+#recent-actions-module>h4 {
+    color: #fff;
+    font-weight: 600;
+}
+
+.btn-group.float-right {
+    font-weight: 700;
+    width: 100%;
+}
+
+.btn.btn-xs.btn-success.addlink {
+    border: 3px solid #fff;
+}
+
+.btn.btn-xs.btn-success.addlink:hover {
+    border: 3px solid #a00;
+    background-color: white;
+    color: #a00;
+    transition: 500ms;
+    -webkit-transition: 500ms;
+    -moz-transition: 500ms;
+    -ms-transition: 500ms;
+    -o-transition: 500ms;
+}
+
+.btn.btn-xs.btn-info.changelink {
+    background-color: white;
+    color: #a00;
+    transition: 500ms;
+    -webkit-transition: 500ms;
+    -moz-transition: 500ms;
+    -ms-transition: 500ms;
+    -o-transition: 500ms;
+}
+
+.btn.btn-xs.btn-info.changelink:hover {
+    background-color: #a00;
+    border: 0px;
+    color: #fff;
+    transition: 500ms;
+    -webkit-transition: 500ms;
+    -moz-transition: 500ms;
+    -ms-transition: 500ms;
+    -o-transition: 500ms;
+}
+
+label:not(.form-check-label):not(.custom-file-label) {
+    display: grid;
+    font-weight: 700;
+    color: white;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.select2-container {
+    width: 100% !important;
+}
+
+.vTextField,
+.vLargeTextField,
+.vURLField,
+.vIntegerField,
+.vBigIntegerField,
+.vForeignKeyRawIdAdminField,
+.vDateField,
+.vTimeField,
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+}
+
+input[type="file"]::after {
+    width: 100%;
+    color: white;
+    content: attr("<img width='128px' height='128px' alt='your image model' />");
+}
+
+.btn.btn-info.form-control {
+    color: #a00;
+    background-color: white;
+    transition: 500ms;
+    -webkit-transition: 500ms;
+    -moz-transition: 500ms;
+    -ms-transition: 500ms;
+    -o-transition: 500ms;
+}
+
+.btn.btn-info.form-control:hover {
+    color: rgb(255, 255, 255);
+    background-color: rgb(6, 170, 0);
+    transition: 500ms;
+    -webkit-transition: 500ms;
+    -moz-transition: 500ms;
+    -ms-transition: 500ms;
+    -o-transition: 500ms;
+}
+
+.nav-item.dropdown {
+    display: none;
+}
+
+.main-footer {
+    background-color: #a00;
+}
+
+.main-footer>* {
+    color: white;
+}

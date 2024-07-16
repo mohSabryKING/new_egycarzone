@@ -1,0 +1,63 @@
+{%extends 'home.html'%}{% block tit %}{{user_profile }}{% endblock %} {% load static %}
+
+<br>{% block top_menu %} {% include "top_menu.html" %} {% endblock %}
+<br>{% block head_model %}
+<div class="alt_comp">
+
+    {% include "user_profile/model_of_user.html" %}
+
+</div>{% endblock %}
+<br>{% block body_1 %}
+<h2 class="" style="text-align: center;">كل القطع الخاصة ب {{user_profile.name}}</h2>
+<div class="alt_comp" style="width: 100%;grid-template-columns: repeat(3,auto);justify-content: center;">
+
+    <a href="{% url 'core:home' %}" class="button_x red">العودة الي الرئيسية</a>
+    <a href="{% url 'core:view_user_profile' user.username user.pk user.username  user_profile.name %}" class="button_x red">الرجوع الي الصفخة</a>
+    <a href="{% url 'core:user_add_car_decore' user.username user.pk user.username  user_profile.name %}" class="button_x red">أضاغة قطعة غيار</a>
+    <br>
+</div>
+
+<br>{% if my_parts %}
+
+<div class="div_4_parts" style="">
+
+    {% for m in my_parts %}
+    <div class="div_4_parts">
+
+        <ul type="none" class="list_model_1">
+
+
+            <a href="">
+                <li>
+                    <figure style="width: 100%;">
+                        <img src="{{m.part_img.url}}" width="100%" height="250px" alt="" />
+                    </figure>
+
+                </li>
+                <li>
+                    <h2>العلامة{{m.belong_to_mark}}</h2>
+                </li>
+                <li>الموديل{{m.belong_to_model}}</li>
+                <li>اسم القطعة{{m.name}}</li>
+
+                <li><strong>{{m.price}}EGP</strong></li>
+            </a>
+        </ul>
+
+    </div>
+    {% endfor %}
+</div>
+
+{%else%}
+<h2 style="text-align: center;">لاتوجد اي بيانات</h2>{% endif %} {% endblock %}
+<br>{% block body_2 %}
+
+
+
+
+
+
+
+</div> {% endblock %}
+<br>{% block bottom_menu %}{% include "bottom_menu.html" %} {% endblock %}
+<br>{% block scripts_area%}{% endblock %}

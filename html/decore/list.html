@@ -1,0 +1,55 @@
+{%extends 'home.html'%}{% block tit %}{{user_profile.name}}{% endblock %} {% load static %}
+
+<br>{% block top_menu %} {% include "top_menu.html" %} {% endblock %}
+<br>{% block head_model %}
+<div class="alt_comp">
+    <h2 class="">ALL decore models of {{user_profile.name}}</h2>
+    <a href="{% url 'core:home' %}" class="button_x red">back to home page</a>
+    <a href="{% url 'core:view_user_profile' user.username user.pk user.username  user_profile.name %}" class="button_x red">back to my profile</a>
+    <a href="{% url 'core:user_add_car_decore' user.username user.pk user.username  user_profile.name %}" class="button_x red">Add a new decore model</a>
+
+
+</div>{% endblock %}
+<br>{% block body_1 %}
+<br>{% if owned_decores %}
+
+<div class="div_4_parts" style="">
+
+    {% for m in owned_decores %}
+    <div>
+
+        <ul type="none" class="list_model_1">
+
+
+            <a href="{{m.get_absolute_url}}">
+                <li>
+                    {{m.view_decore_model}}
+                </li>
+                <li>
+                    <h1>{{m.name}}</h1>
+                </li>
+                <li>
+                    <h2> نوع الأكسسوار :{{m.type}}</h2>
+                </li>
+                <li>Price:<strong>{{m.price}}EGP</strong></li>
+                <li>made at {{m.added_in}}</li>
+            </a>
+        </ul>
+
+    </div>
+    {% endfor %}
+</div>
+
+{%else%}
+<h2 style="text-align: center;">NO decore models to display</h2>{% endif %} {% endblock %}
+<br>{% block body_2 %}
+
+
+
+
+
+
+
+</div> {% endblock %}
+<br>{% block bottom_menu %}{% include "bottom_menu.html" %} {% endblock %}
+<br>{% block scripts_area%}{% endblock %}

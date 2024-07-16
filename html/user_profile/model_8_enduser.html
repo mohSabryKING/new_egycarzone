@@ -1,0 +1,7 @@
+<h1>أختار القسم المرادت تصفحة</h1>
+<div class="alt_comp" style="width: 100%;margin-bottom: 10%;grid-template-columns: repeat(4,auto);">
+
+    {% for sec in sectors %}
+    <a href="{% url 'core:sector_x' user.username user.pk user.username  user_profile.name sec %}" style="display: grid;place-items: center;padding: 3%;" class="button_x red">{{sec}}</a> {% endfor %}
+
+</div>

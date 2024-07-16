@@ -1,0 +1,37 @@
+{%extends 'home.html'%}{% block tit %}{{user_profile.name}}{{user_profile.user_of}}{% endblock %}
+
+<br>{% block top_menu %} {% include "top_menu.html" %} {% endblock %}
+<br>{% block head_model %}
+<h2 class="">Marks Menus</h2>
+<br> {% include "user_profile/model_of_user.html" %}{% endblock %}
+<br>{% block body_1 %} {% endblock %}
+<br>{% block body_2 %} {% if all_marks %}
+<div class="div_4_parts" style="column-gap: 2%;">
+
+    {% for m in all_marks %}
+
+
+    <div> {{m.print_model_1}}
+        <br>{% if user.is_authenticated %}
+        <div class="div_4_parts" style="grid-template-columns: repeat(2,40%);gap: 5%;justify-content: center;">
+
+            <a href="{% url 'core:user_add_car' user.username user.pk user.username user_profile.name m.pk m.name %}" class="button_x red">أضافة سيارة</a>
+            <a href="{% url 'core:user_view_car'  user.username user.pk user.username user_profile.name m.pk m.name %}" class="button_x red">تعديل علي بيانات سيارة</a>
+            <a href="{% url 'core:user_add_car_adv'  user.username user.pk user.username user_profile.name m.pk m.name  %}" class="button_x red">أضافة إعلان</a>
+            <a href="{% url 'core:user_view_car_adv'  user.username user.pk user.username user_profile.name m.pk m.name %}" class="button_x red">تعديل علي بيانات إعلان</a>
+        </div>
+        {% endif %}
+        <br>
+        <a class="button_x red" style="width: 100%;" href="{{m.get_absolute_url}}"> Explore</a>
+        <br><br>
+    </div>
+    {% endfor %}
+</div>
+
+{%else%}
+<h2>NO marks to display</h2>
+{% endif %}
+
+</div> {% endblock %}
+<br>{% block bottom_menu %}{% include "bottom_menu.html" %} {% endblock %}
+<br>{% block scripts_area%}{% endblock %}

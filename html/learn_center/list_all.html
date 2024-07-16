@@ -1,0 +1,23 @@
+{%extends 'home.html'%}{% block tit %}{{user.username}} المدارس التابعة ل{% endblock %}
+
+<br>{% block top_menu %} {% include "top_menu.html" %} {% endblock %}
+<br>{% block head_model %}
+
+<div class="alt_comp">
+    <h1>{{user.username}}المدارس التابعة ل{{school_owner.name}}</h1>
+
+
+</div>
+
+{% endblock %}
+<br>{% block body_1 %}
+<div class="div_4_parts" style="gap: 20px;">
+    {% if schools %} {% for s in schools %}
+    <a href="{% url 'core:school_item' user.username user.pk user.username school_owner.name s.pk %}" class="button_x red">{{s.name}}</a> {% endfor %} {% else %} {% endif %}
+
+</div>
+
+{% endblock %}
+<br>{% block body_2 %}{% endblock %}
+<br>{% block bottom_menu %}{% include "bottom_menu.html" %} {% endblock %}
+<br>{% block scripts_area%}{% endblock %}

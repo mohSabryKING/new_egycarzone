@@ -1,0 +1,49 @@
+<nav id="navmenu" class="navmenu">
+    <ul style="display: flex;flex-direction: row-reverse;">
+        {% if user.is_authenticated %} {% if user.is_staff or user.is_superuser %}
+        <li><a href="/admin">{{user.username}}</a></li>
+        <li>
+
+            <form action="{% url 'core:logout' %}" method="post">
+                {% csrf_token %}
+                <button type="submit" class="logout_style">تسجيل خروج</button>
+            </form>
+        </li>
+        {% else %}
+        <li><a href="{{profile_x.get_absolute_url}}">{{user.username}}</a></li>
+        <li>
+            <form action="{% url 'core:logout' %}" method="post">
+                {% csrf_token %}
+                <button class="logout_style" type="submit">تسجيل خروج</button>
+            </form>
+        </li>
+        {% endif %} {% else %}
+        <li><a href="{% url 'core:add_user' %}">تسجيل مستحدم جديد</a></li>
+        <li><a href="{% url 'core:login' %}">تسجيل دخول</a></li>
+        {% endif %}
+
+
+        <li><a href="#about">نبذة عنا</a></li>
+        <li><a href="#services">الخدمات</a></li>
+        <li><a href="#portfolio">سابقة الأعمال</a></li>
+        <li><a href="#team">الفريق</a></li>
+        <li><a href="#contact">التواصل</a></li>
+    </ul>
+    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
+
+<!--Levomando70---d:!TpTZH9z72yhw-->
+
+<!--Levomando70---d:.wEKHfvn_w6Fbnj-->
+
+<!--Levomando70---d:!TpTZH9z72yhw-->
+
+<!--Levomando70---d:!TpTZH9z72yhw-->
+
+<!--Levomando70---d:!TpTZH9z72yhw-->
+
+<!--Levomando70---d:!TpTZH9z72yhw-->
+
+<!--Levomando70---d:!TpTZH9z72yhw-->
+
+<!--Levomando70---d:!TpTZH9z72yhw-->

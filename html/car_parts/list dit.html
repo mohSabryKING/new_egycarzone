@@ -1,0 +1,39 @@
+{%extends 'home.html'%} {% load static %} {% block tit %}{{profile_owner}}{% endblock %}
+
+<br>{% block top_menu %} {% include "top_menu.html" %} {% endblock %}
+<br>{% block head_model %} {# id_user_img#}
+<div class="dual_side">
+    <ul>
+        <h2>share your petrol area</h2>
+        <img src="{{the_part_itethe_part_item.img_part.url}}" alt="" style="border: 3px solid red;border-radius: 50%;" id="user_view_img" class="user_model">
+    </ul>
+    <ul>
+        <ul type="none" class="list_model_1">
+
+
+            <a href="">
+                <li>
+                    <figure style="width: 100%;">
+                        <img src="{{the_part_item.part_img.url}}" width="100%" height="250px" alt="" />
+                    </figure>
+
+                </li>
+                <li>
+                    <h2>العلامة{{the_part_item.belong_to_mark}}</h2>
+                </li>
+                <li>الموديل{{the_part_item.belong_to_model}}</li>
+                <li>اسم القطعة{{the_part_item.name}}</li>
+
+                <li><strong>{{the_part_item.price}}EGP</strong></li>
+            </a>
+        </ul>
+    </ul>
+</div>
+
+{% endblock %}
+<br>{% block body_1 %}{% endblock %}
+<br>{% block body_2 %}{% endblock %}
+<br>{% block bottom_menu %}{% include "bottom_menu.html" %} {% endblock %}
+<br>{% block scripts_area%}
+<script>
+</script>{% endblock %}

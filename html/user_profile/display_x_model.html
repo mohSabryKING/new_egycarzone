@@ -1,0 +1,49 @@
+{%extends 'home.html'%}{% block tit %}{{user_profile.name}} {{user_profile.user_of}}{% endblock %}
+
+<br>{% block top_menu %} {% include "top_menu.html" %} {% endblock %}
+<br>{% block head_model %}
+<div class="center_model_2" style="place-content: initial;">
+
+    <br>{% include "user_profile/model_of_user.html" %}
+    <li>{{user_profile.user_phone}}</li>
+    <li></li>
+    <li></li>
+    <li></li>
+
+    <div class="div_4_parts">
+        {% if items_x %} {% for i in items_x %}
+        <div>
+
+            <ul type="none" class="list_model_1" style="background-color: white;">
+                <a href="">
+
+                    <li>
+                        {{i.name}}
+                    </li>
+                    <li>
+                        {{i.address}}
+                    </li>
+                    {% if i.location_branch %}
+                    <li>
+                        <a href="{{i.location_branch}}" class="button_x red" target="_blank">عرض العنوان</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'core:petrol_x_data' user.username user.pk user.username user_profile.name sector_of user_profile.pk i.pk %}" class="button_x red">مزيد من التفاصيل</a>
+                    </li>
+                    {% endif %}
+                    <li>
+                        {{i.user_phone}}
+                    </li>
+
+                </a>
+            </ul>
+
+        </div>
+        {% endfor %} {% else %} {% endif %}
+    </div>
+
+</div>{% endblock %}
+<br>{% block body_1 %} {% endblock %}
+<br>{% block body_2 %}{% endblock %}
+<br>{% block bottom_menu %}{% include "bottom_menu.html" %} {% endblock %}
+<br>{% block scripts_area%}{% endblock %}

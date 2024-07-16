@@ -1,0 +1,44 @@
+{%extends 'home.html'%}{% block tit %}{{user_profile.name}}{{user_profile.user_of}}{% endblock %}
+
+<br>{% block top_menu %} {% include "top_menu.html" %} {% endblock %}
+<br>{% block head_model %}
+<h2 class="">Marks Menus</h2>
+<br> {% include "user_profile/model_of_user.html" %}{% endblock %}
+<br>{% block body_1 %} {% endblock %}
+<br>{% block body_2 %} {% if user_cars %}
+
+<div class="div_4_parts">
+    {% for c in user_cars %}
+    <ul class="list_model" style="text-align: center;">
+        <li>
+            <figure style="width: 100%;">
+                <img src="{{c.m_img.url}}" width="100%" height="250px" alt="" />
+            </figure>
+        </li>
+
+        <li>
+            <h3>{{c.name}}</h3>
+        </li>
+
+        <li>
+            <h3>model of {{c.model_of_year}}</h3>
+        </li>
+        <li>Weight:<strong>{{c.weight}}Tonn</strong></li>
+        <li>Speed:<strong>{{c.speed_km}} Km/h</strong></li>
+        <li>Engine Capacity:<strong>{{c.engine_capacity}} CC</strong></li>
+        <li>Price:<strong>{{c.price}} EGP</strong></li>
+        <li>made at {{c.date_of_made}}</li>
+        <li>
+            <a href="{% url 'core:user_change_car' user.username user.pk user.username user_profile.name c.family_of.pk c.family_of.name c.pk%}" class="button_x red">update data</a>
+        </li>
+    </ul>
+    {% endfor %}
+</div>
+
+{%else%}
+<h2>NO marks to display</h2>
+{% endif %}
+
+</div> {% endblock %}
+<br>{% block bottom_menu %}{% include "bottom_menu.html" %} {% endblock %}
+<br>{% block scripts_area%}{% endblock %}
